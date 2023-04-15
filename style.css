@@ -57,7 +57,9 @@ a {
 }
 
 /* Utils */
-
+.hidden{
+  display: none;
+}
 .btn {
   font-family: inherit;
   letter-spacing: 1px;
@@ -358,6 +360,8 @@ a {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  position: relative;
+  top:3%
 }
 
 .main-header__logo-text {
@@ -395,18 +399,47 @@ a {
 /* Hero Section Stylings */
 
 .home-hero {
+  width: 100%;
   display: flex;
   height: 100vh;
   min-height: 80rem;
   max-height: 120rem;
+  background: linear-gradient(rgba(0,0,0,0.3),rgba(0,0,0,0.3)),url('assets/nature.jpg');
+  background-size: cover;
 }
 
 .home-hero__content {
+  padding: 5rem;
+  position: relative;
+  top: 7rem;
+  margin-top: 5rem;
   max-width: 120rem;
   margin: auto;
   width: 90%;
-
   animation: downToUp 0.8s;
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(2px);
+  background-color: rgba(60, 60, 60, 0.5);  
+}
+.heading-primary__main{
+  text-align: center;
+}
+.heading-primary__main p {
+  font-size: 2.3rem;
+  padding-inline: 3%;
+}
+@media (max-width: 650px) {
+.heading-primary__main{
+  font-size: 2rem;
+  position: relative;
+  bottom: 5rem;
+}
+.heading-primary__main p{
+  font-size: 2rem; 
+}
+.home-hero__info{
+  height: 10vh;
+}
 }
 
 @media (max-width: 37.5em) {
@@ -424,10 +457,17 @@ a {
 
 .home-hero__heading-primary {
   margin-bottom: 5rem;
+  color:white;
 }
-
+.heading-primary__sm{
+  display: none;
+}
+.heading-primary__main h1{
+  margin-bottom: 2rem;
+}
 .home-hero__btn-theme {
   margin-right: 2rem;
+  display: none;
 }
 
 @media (max-width: 37.5em) {
@@ -452,8 +492,11 @@ a {
 
 .about__info {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(2,1fr);
   grid-gap: 8rem;
+  background-color: rgb(30, 93, 220);
+  padding-inline: 6%;
+  box-shadow: 5px 5px 0 black;
 }
 
 @media (max-width: 37.5em) {
@@ -464,11 +507,17 @@ a {
 
   .about__btn-theme {
     width: 70%;
+    display: none;
   }
 }
-
+.about__btn-theme {
+  width: 70%;
+  display: none;
+}
 .about__heading-quaternary {
   margin-bottom: 3rem;
+  color: white;
+  padding-top: 3rem;
 }
 
 .about__main-info {
@@ -477,6 +526,7 @@ a {
 
 .about__text-primary {
   margin-bottom: 4rem;
+  color:white;
 }
 
 .about__info-heading {
@@ -645,11 +695,19 @@ a {
 .projects__list-item-img-cont {
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  position: relative;
 }
 
 .projects__list-item-img {
   width: 100%;
   display: block;
+}
+.actual_project{
+  width: 100%;
+  position: absolute;
+  top: 2px;
+  padding-top: 1rem;
+
 }
 
 .projects__list-item-heading-tertiary {
